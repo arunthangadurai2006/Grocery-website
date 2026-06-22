@@ -1,0 +1,648 @@
+[
+  {
+    "name": "Aachi Chilli Powder",
+    "category":"Masala",
+    "price": 65,
+    "stock": 50,
+    "brand": "Aachi",
+    "image": "https://tse4.mm.bing.net/th/id/OIP.xMa9OWztQudwfo46kgTxyAHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Sakthi Chilli Powder",
+    "category": "Masala",
+    "price": 70,
+    "stock": 45,
+    "brand": "Sakthi",
+    "image": "https://tse2.mm.bing.net/th/id/OIP.aD2JU0TCvH462kKBd3A9BgHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "MTR Chilli Powder",
+    "category": "Masala",
+    "price": 75,
+    "stock": 40,
+    "brand": "MTR",
+    "image": "https://tse1.mm.bing.net/th/id/OIP.WXvOdBwGYVwXht9oZrODfgHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Eastern Chilli Powder",
+    "category": "Masala",
+    "price": 68,
+    "stock": 42,
+    "brand": "Eastern",
+    "image": "https://tse3.mm.bing.net/th/id/OIP.6RkC6m-47WVFKrntIML-gQHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Aachi Turmeric Powder",
+    "category": "Masala",
+    "price": 55,
+    "stock": 50,
+    "brand": "Aachi",
+    "image": "https://tse4.mm.bing.net/th/id/OIP.8UY35hZY7_P30o79AJIzwQHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Sakthi Turmeric Powder",
+    "category": "Masala",
+    "price": 60,
+    "stock": 48,
+    "brand": "Sakthi",
+    "image": "https://tse2.mm.bing.net/th/id/OIP.HULEgBTcWy_7jKnomm4jnQHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Everest Turmeric Powder",
+    "category": "Masala",
+    "price": 62,
+    "stock": 45,
+    "brand": "Everest",
+    "image": "https://tse3.mm.bing.net/th/id/OIP.McNQVge7aMsXG9BaALOfYwHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Aachi Coriander Powder",
+    "category": "Masala",
+    "price": 58,
+    "stock": 44,
+    "brand": "Aachi",
+    "image": "https://tse2.mm.bing.net/th/id/OIP.X00o7LNS2gjEsprCYFeZQAHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Sakthi Coriander Powder",
+    "category": "Masala",
+    "price": 60,
+    "stock": 40,
+    "brand": "Sakthi",
+    "image": "https://tse3.mm.bing.net/th/id/OIP.3Ivra8pR9-3fjtGNMzQ60gHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Eastern Coriander Powder",
+    "category": "Masala",
+    "price": 62,
+    "stock": 38,
+    "brand": "Eastern",
+    "image": "https://tse4.mm.bing.net/th/id/OIP.gw5hcdov-pair5KKFx18TQHaH7?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Aashirvaad Atta",
+    "category": "Grains",
+    "price": 125,
+    "stock": 47,
+    "brand": "Aashirvaad",
+    "image": "https://tse4.mm.bing.net/th/id/OIP.l92OT1XcVi-seJvscC5rPQHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Pillsbury Atta",
+    "category": "Grains",
+    "price": 130,
+    "stock": 42,
+    "brand": "Pillsbury",
+    "image": "https://tse1.mm.bing.net/th/id/OIP.luF4aS92_0-D3gVvoXj5igHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Annapurna Atta",
+    "category": "Grains",
+    "price": 120,
+    "stock": 39,
+    "brand": "Annapurna",
+    "image": "https://tse4.mm.bing.net/th/id/OIP.8MDeUwqsPG_mmMvboLnJ4AHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Akshaya Whole Wheat Atta",
+    "category": "Grains",
+    "price": 135,
+    "stock": 35,
+    "brand": "Akshaya",
+    "image": "https://tse4.mm.bing.net/th/id/OIP.vs-PHrBGzyo7dK0JdjVjVgHaJ4?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "India Gate Basmati Rice",
+    "category": "Rice",
+    "price": 650,
+    "stock": 30,
+    "brand": "India Gate",
+    "image": "https://tse4.mm.bing.net/th/id/OIP.cB1nSj71Kv4CN5Gv-Ss0jwHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Ponni Boiled Rice",
+    "category": "Rice",
+    "price": 550,
+    "stock": 28,
+    "brand": "Ponni",
+    "image": "https://tse1.mm.bing.net/th/id/OIP.AkUbF0Nppk1rQEXIvf8fCgHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Sona Masoori Rice",
+    "category": "Rice",
+    "price": 580,
+    "stock": 25,
+    "brand": "Sona Masoori",
+    "image": "https://tse3.mm.bing.net/th/id/OIP.qNwvkn-lQrKcsmyg6fQbnQHaMG?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Fortune Basmati Rice",
+    "category": "Rice",
+    "price": 620,
+    "stock": 25,
+    "brand": "Fortune",
+    "image": "https://tse4.mm.bing.net/th/id/OIP.MRcSWKZRxl5jnrxrNv_Q4gHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Fortune Sunflower Oil",
+    "category": "Oil",
+    "price": 180,
+    "stock": 50,
+    "brand": "Fortune",
+    "image": "https://tse1.mm.bing.net/th/id/OIP._umoebCWtIARqQ3h-x26iQHaKQ?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Gold Winner Sunflower Oil",
+    "category": "Oil",
+    "price": 190,
+    "stock": 45,
+    "brand": "Gold Winner",
+    "image": "https://tse3.mm.bing.net/th/id/OIP.RzwVNkHlWwOWWtA6cYc8JgHaLE?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Idhayam Gingelly Oil",
+    "category": "Oil",
+    "price": 220,
+    "stock": 35,
+    "brand": "Idhayam",
+    "image": "https://tse3.mm.bing.net/th/id/OIP._mrEsJCMQPB5BO7iqy9ZggHaJQ?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Dhara Groundnut Oil",
+    "category": "Oil",
+    "price": 210,
+    "stock": 30,
+    "brand": "Dhara",
+    "image": "https://tse3.mm.bing.net/th/id/OIP.0SkLDG1DTXI7bbEONo6xHgHaKh?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Tata Salt",
+    "category": "Salt",
+    "price": 30,
+    "stock": 100,
+    "brand": "Tata",
+    "image": "https://tse2.mm.bing.net/th/id/OIP.Swwe0IYUA61OgAcBOMmSIQHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Aashirvaad Salt",
+    "category": "Salt",
+    "price": 32,
+    "stock": 80,
+    "brand": "Aashirvaad",
+    "image": "https://tse1.mm.bing.net/th/id/OIP.rC_PAzuEOyz8GTCYkbqoawHaJX?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Captain Cook Salt",
+    "category": "Salt",
+    "price": 35,
+    "stock": 60,
+    "brand": "Captain Cook",
+    "image": "https://tse3.mm.bing.net/th/id/OIP.etB7zmqzlO-9EbYVQhlnCgHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Annapurna Salt",
+    "category": "Salt",
+    "price": 30,
+    "stock": 70,
+    "brand": "Annapurna",
+    "image": "https://tse2.mm.bing.net/th/id/OIP.KkH6bWeQYtQ1o-t2sg3grwHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Tata Tea Gold",
+    "category": "Tea & Coffee",
+    "price": 320,
+    "stock": 35,
+    "brand": "Tata",
+    "image": "https://tse3.mm.bing.net/th/id/OIP.mNsbdeKGdkTFYLWVd-koBwHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Red Label Tea",
+    "category": "Tea & Coffee",
+    "price": 290,
+    "stock": 40,
+    "brand": "Red Label",
+    "image": "https://tse1.mm.bing.net/th/id/OIP.wBFxBdo-oKQbrqm6LPQfAgHaI-?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Bru Instant Coffee",
+    "category": "Tea & Coffee",
+    "price": 180,
+    "stock": 40,
+    "brand": "Bru",
+    "image": "https://tse1.mm.bing.net/th/id/OIP.flNhDMP0VVecZ1KOIzRUiQHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Nescafe Classic",
+    "category": "Tea & Coffee",
+    "price": 220,
+    "stock": 35,
+    "brand": "Nescafe",
+    "image": "https://tse2.mm.bing.net/th/id/OIP.UcpKZLTNet97i0uaGeL3LAHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Amul Fresh Milk",
+    "category": "Milk & Dairy",
+    "price": 65,
+    "stock": 60,
+    "brand": "Amul",
+    "image": "https://tse1.mm.bing.net/th/id/OIP.4Vfbp_4e1X1Z-MsENODLdQHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Aavin Milk",
+    "category": "Milk & Dairy",
+    "price": 60,
+    "stock": 55,
+    "brand": "Aavin",
+    "image": "https://tse1.mm.bing.net/th/id/OIP.Y8UFPZ2aShXDkkadNj7axwAAAA?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Amul Butter",
+    "category": "Milk & Dairy",
+    "price": 58,
+    "stock": 50,
+    "brand": "Amul",
+    "image": "https://tse3.mm.bing.net/th/id/OIP.FZ8euvHYuSfWD8s4dwHzYAHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Amul Cheese Slices",
+    "category": "Milk & Dairy",
+    "price": 140,
+    "stock": 40,
+    "brand": "Amul",
+    "image": "https://tse1.mm.bing.net/th/id/OIP.Y81uWjDaC7FLq6wvxkwtiAHaES?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Parle-G",
+    "category": "Snacks",
+    "price": 10,
+    "stock": 100,
+    "brand": "Parle",
+    "image": "https://tse1.mm.bing.net/th/id/OIP.81pHEC6AN7GTTKLbrzxmYAHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Britannia Good Day",
+    "category": "Snacks",
+    "price": 35,
+    "stock": 70,
+    "brand": "Britannia",
+    "image": "https://tse2.mm.bing.net/th/id/OIP.sS-VKfvVCppsCa0JqMLNFQHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Marie Gold",
+    "category": "Snacks",
+    "price": 30,
+    "stock": 65,
+    "brand": "Britannia",
+    "image": "https://tse4.mm.bing.net/th/id/OIP.n0FsrFT4bJem8NKRLu3o-wAAAA?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Sunfeast Dark Fantasy",
+    "category": "Snacks",
+    "price": 45,
+    "stock": 50,
+    "brand": "Sunfeast",
+    "image": "https://tse3.mm.bing.net/th/id/OIP.uFBmoe3w6pO13wV1AXwCqgHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Maggi Noodles",
+    "category": "Noodles",
+    "price": 15,
+    "stock": 100,
+    "brand": "Maggi",
+    "image": "https://tse1.mm.bing.net/th/id/OIP.CNLgzQhBdMlkQfhLfyEkjgHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Yippee Noodles",
+    "category": "Noodles",
+    "price": 20,
+    "stock": 80,
+    "brand": "Yippee",
+    "image": "https://tse2.mm.bing.net/th/id/OIP.Vj_gwC22bX0NFV_n1yZ0EAHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Ching's Noodles",
+    "category": "Noodles",
+    "price": 25,
+    "stock": 70,
+    "brand": "Ching's",
+    "image": "https://tse1.mm.bing.net/th/id/OIP.46BVkjxeRVtltWtR5hu7iQHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Lux Soap",
+    "category": "Soap",
+    "price": 40,
+    "stock": 80,
+    "brand": "Lux",
+    "image": "https://tse1.mm.bing.net/th/id/OIP.-RikxzdGREpyuHF1udqu4wHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Lifebuoy Soap",
+    "category": "Soap",
+    "price": 38,
+    "stock": 75,
+    "brand": "Lifebuoy",
+    "image": "https://tse2.mm.bing.net/th/id/OIP.yOxdBw-XqFE02zEpQGlPOAHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Dove Soap",
+    "category": "Soap",
+    "price": 55,
+    "stock": 60,
+    "brand": "Dove",
+    "image": "https://tse2.mm.bing.net/th/id/OIP.3f8h7uW6UPY4NXMwXGRXAgHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Pears Soap",
+    "category": "Soap",
+    "price": 50,
+    "stock": 55,
+    "brand": "Pears",
+    "image": "https://tse4.mm.bing.net/th/id/OIP.WwUDOWArfZb4JFChu68uIwHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Clinic Plus Shampoo",
+    "category": "Shampoo",
+    "price": 120,
+    "stock": 50,
+    "brand": "Clinic Plus",
+    "image": "https://tse1.mm.bing.net/th/id/OIP.M7u8Ph1b8zD8ePYz4SOt7QHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Head & Shoulders Shampoo",
+    "category": "Shampoo",
+    "price": 180,
+    "stock": 40,
+    "brand": "Head & Shoulders",
+    "image": "https://tse4.mm.bing.net/th/id/OIP.FQ4fU-Pfv9gdMwXiVSI-iAHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Dove Shampoo",
+    "category": "Shampoo",
+    "price": 190,
+    "stock": 35,
+    "brand": "Dove",
+    "image": "https://tse4.mm.bing.net/th/id/OIP.l9eUBQHCnucYBUOKeYw2jgHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Surf Excel Detergent",
+    "category": "Detergent",
+    "price": 220,
+    "stock": 45,
+    "brand": "Surf Excel",
+    "image": "https://tse1.mm.bing.net/th/id/OIP.fbfMnVwaEKLC_dqMJLt6VQHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Aachi Sambar Powder",
+    "category": "Masala",
+    "price": 70,
+    "stock": 60,
+    "brand": "Aachi",
+    "image": "https://tse4.mm.bing.net/th/id/OIP.M6JNFxuJ3BR2U1t0IoYlPgHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Sakthi Sambar Powder",
+    "category": "Masala",
+    "price": 75,
+    "stock": 55,
+    "brand": "Sakthi",
+    "image": "https://tse4.mm.bing.net/th/id/OIP.WIaz3bphDokUzua5i3FceQHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Aachi Rasam Powder",
+    "category": "Masala",
+    "price": 65,
+    "stock": 55,
+    "brand": "Aachi",
+    "image": "https://tse1.mm.bing.net/th/id/OIP.6Ue7flazA8dqc2t8gmlfFAHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Aachi Biryani Masala",
+    "category": "Masala",
+    "price": 80,
+    "stock": 50,
+    "brand": "Aachi",
+    "image": "https://tse1.mm.bing.net/th/id/OIP.DiitdX14hoSa_J_uZrbBFgHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Sakthi Mutton Masala",
+    "category": "Masala",
+    "price": 90,
+    "stock": 45,
+    "brand": "Sakthi",
+    "image": "https://tse4.mm.bing.net/th/id/OIP.UGdT54cceh2qhbNDqKwtmwHaIC?pid=Api&P=0&h=180"
+  }
+  ,
+  {
+    "name": "Tomato",
+    "category": "Vegetables",
+    "price": 20,
+    "stock": 50,
+    "brand": "Fresh Farm",
+    "image": "https://tse4.mm.bing.net/th/id/OIP.mrQpA0QUrP80zYDNumav-QHaE8?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Onion",
+    "category": "Vegetables",
+    "price": 25,
+    "stock": 60,
+    "brand": "Fresh Farm",
+    "image": "https://tse3.mm.bing.net/th/id/OIP.pRavxoDVghghC5kF-zwFuwHaEK?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Potato",
+    "category": "Vegetables",
+    "price": 30,
+    "stock": 70,
+    "brand": "Fresh Farm",
+    "image": "https://tse2.mm.bing.net/th/id/OIP.ync23r1TQC02dTi8pFi00AHaE8?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Carrot",
+    "category": "Vegetables",
+    "price": 35,
+    "stock": 40,
+    "brand": "Fresh Farm",
+    "image": "https://tse3.mm.bing.net/th/id/OIP.j8UBdTDN6Qvhmuue2RFtWQHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Cabbage",
+    "category": "Vegetables",
+    "price": 28,
+    "stock": 45,
+    "brand": "Fresh Farm",
+    "image": "https://tse3.mm.bing.net/th/id/OIP.HmsYr-3DCI-7uRaXH0HnpQHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Cauliflower",
+    "category": "Vegetables",
+    "price": 40,
+    "stock": 35,
+    "brand": "Fresh Farm",
+    "image": "https://tse2.mm.bing.net/th/id/OIP.bN8S8qJ2sM8XlFVsZysOZAHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Brinjal",
+    "category": "Vegetables",
+    "price": 32,
+    "stock": 30,
+    "brand": "Fresh Farm",
+    "image": "https://tse1.mm.bing.net/th/id/OIP.v9xh2rnmlG2WClFbCLrU8AHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Spinach",
+    "category": "Vegetables",
+    "price": 15,
+    "stock": 55,
+    "brand": "Fresh Farm",
+    "image": "https://tse3.mm.bing.net/th/id/OIP.Hr6cB3W-p0Hhabzefj87LQHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Lady Finger (Okra)",
+    "category": "Vegetables",
+    "price": 38,
+    "stock": 42,
+    "brand": "Fresh Farm",
+    "image": "https://tse2.mm.bing.net/th/id/OIP.KGWdiOrQ1N1itV_79hqPnAHaFL?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Green Chilli",
+    "category": "Vegetables",
+    "price": 22,
+    "stock": 65,
+    "brand": "Fresh Farm",
+    "image": "https://tse4.mm.bing.net/th/id/OIP.qG2ET7Z2hqwYeGAUAGVXOAHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Apple",
+    "category": "Fruits",
+    "price": 120,
+    "stock": 50,
+    "brand": "Fresh Farm",
+    "image": "https://tse2.mm.bing.net/th/id/OIP.3_BosVmdfve7m7g_XIJy9AHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Banana",
+    "category": "Fruits",
+    "price": 40,
+    "stock": 80,
+    "brand": "Fresh Farm",
+    "image": "https://tse3.mm.bing.net/th/id/OIP.bvnXCrDsFULcN5mzH74_yQHaFC?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Orange",
+    "category": "Fruits",
+    "price": 70,
+    "stock": 60,
+    "brand": "Fresh Farm",
+    "image": "https://tse2.mm.bing.net/th/id/OIP.mC8gIvVAkW6YOUXYLe13dgHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Grapes",
+    "category": "Fruits",
+    "price": 90,
+    "stock": 55,
+    "brand": "Fresh Farm",
+    "image": "https://tse4.mm.bing.net/th/id/OIP.ng_PulqqxnHL-t2lfZyHQAHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Mango",
+    "category": "Fruits",
+    "price": 150,
+    "stock": 40,
+    "brand": "Fresh Farm",
+    "image": "https://tse4.mm.bing.net/th/id/OIP.uPYHL-ui0FHcL2PBeJU-UgHaHY?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Pineapple",
+    "category": "Fruits",
+    "price": 110,
+    "stock": 35,
+    "brand": "Fresh Farm",
+    "image": "https://tse3.mm.bing.net/th/id/OIP.dTEvwPQ5McBVwsKoUEZfQQHaJ3?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Papaya",
+    "category": "Fruits",
+    "price": 60,
+    "stock": 45,
+    "brand": "Fresh Farm",
+    "image": "https://tse4.mm.bing.net/th/id/OIP._E7vO0DtjDOF8OOEg0A7ygHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Watermelon",
+    "category": "Fruits",
+    "price": 50,
+    "stock": 30,
+    "brand": "Fresh Farm",
+    "image": "https://tse3.mm.bing.net/th/id/OIP.l7RzqKX47u_FmWbRmRlb4AHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Pomegranate",
+    "category": "Fruits",
+    "price": 140,
+    "stock": 25,
+    "brand": "Fresh Farm",
+    "image": "https://tse3.mm.bing.net/th/id/OIP.ozBO980OWH3pBRdEpNczqgHaF_?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Guava",
+    "category": "Fruits",
+    "price": 55,
+    "stock": 65,
+    "brand": "Fresh Farm",
+    "image": "https://tse1.mm.bing.net/th/id/OIP.i8kCR8MZSF7KI4ZYUq2iiQHaHa?pid=Api&P=0&h=180"
+  },
+  
+  {
+    "name": "Lays Chips",
+    "category": "Snacks",
+    "price": 20,
+    "stock": 100,
+    "brand": "PepsiCo",
+    "image": "https://tse3.mm.bing.net/th/id/OIP.NJW2mfzPcrZ1cNToVVEqkAHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Kurkure",
+    "category": "Snacks",
+    "price": 20,
+    "stock": 90,
+    "brand": "PepsiCo",
+    "image": "https://tse3.mm.bing.net/th/id/OIP.LzdbCBudTpFue-5tacrXWwHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Bingo Mad Angles",
+    "category": "Snacks",
+    "price": 25,
+    "stock": 80,
+    "brand": "ITC",
+    "image": "https://tse4.mm.bing.net/th/id/OIP.aOeronuURFcJCCCxKMWqvAHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Pringles",
+    "category": "Snacks",
+    "price": 110,
+    "stock": 50,
+    "brand": "Kellogg's",
+    "image": "https://tse2.mm.bing.net/th/id/OIP.ym2JNpFRcBI-LU-qniTaqwHaFn?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Hide & Seek Cookies",
+    "category": "Snacks",
+    "price": 30,
+    "stock": 70,
+    "brand": "Parle",
+    "image": "https://tse2.mm.bing.net/th/id/OIP.dRznn-557ZoYcaIdI_q9OAHaHa?pid=Api&P=0&h=180"
+  },
+  {
+    "name": "Oreo Cookies",
+    "category": "Snacks",
+    "price": 40,
+    "stock": 60,
+    "brand": "Nabisco",
+    "image": "https://tse1.mm.bing.net/th/id/OIP.3h9iawLKUEM0xFxJMnsMYwHaHa?pid=Api&P=0&h=180"
+  }
+
+]
+  
+
+
