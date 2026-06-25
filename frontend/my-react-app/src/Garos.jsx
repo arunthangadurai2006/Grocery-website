@@ -189,16 +189,20 @@ useEffect(() => {
       {/* BODY */}
       <div style={{ display: isMobile ? "block" : "flex" }}>
         {/* CATEGORY */}
-        <div
-          style={{
-            width: isMobile ? "100%" : 220,
-            display: "flex",
-            flexDirection: isMobile ? "row" : "column",
-            gap: 10,
-            padding: 10,
-            background: "#fff",
-          }}
-        >
+       <div
+  style={{
+    width: isMobile ? "100%" : 220,
+    display: "flex",
+    flexDirection: isMobile ? "row" : "column",
+    gap: 10,
+    padding: 10,
+    background: "#fff",
+
+    // ✅ FIX ADDED
+    overflowX: isMobile ? "auto" : "visible",
+    whiteSpace: isMobile ? "nowrap" : "normal",
+  }}
+>
           {["all", "Vegetables", "Fruits", "Snacks", "Masala"].map((c) => (
             <button
               key={c}
