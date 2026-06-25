@@ -24,14 +24,12 @@ exports.loginUser = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    if (!email || !password) {
-      return res.status(400).json({
-        success: false,
-        message: "Please enter email and password",
-      });
-    }
+    console.log("Email:", email);
+    console.log("Password:", password);
 
     const user = await User.findOne({ email, password });
+
+    console.log("User:", user);
 
     if (!user) {
       return res.status(401).json({
@@ -42,15 +40,13 @@ exports.loginUser = async (req, res) => {
 
     res.status(200).json({
       success: true,
-      message: "Login Successful",
       user,
     });
   } catch (error) {
-    console.error("Login Error:", error);
-
+    console.error(error);
     res.status(500).json({
       success: false,
-      message: "Internal Server Error",
+      message: "Server Error",
     });
   }
 };

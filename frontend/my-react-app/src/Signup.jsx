@@ -15,6 +15,12 @@ export default function Signup() {
     state: "",
     pincode: "",
   });
+  const handleChange = (e) => {
+  setFormData({
+    ...formData,
+    [e.target.name]: e.target.value,
+  });
+};
  const handleSubmit = async (e) => {
   e.preventDefault();
 
@@ -23,26 +29,32 @@ export default function Signup() {
     return;
   }
 
-  await fetch("http://localhost:8000/api/v1/register", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(formData),
-  });
+  try {
+    const response = await fetch(
+      "https://grocery-website-tzz5.onrender.com/api/v1/user/register",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      }
+    );
 
-  alert("Account Created Successfully 🎉");
+    const data = await response.json();
 
-  navigate("/Home");
+    if (!response.ok) {
+      alert(data.message || "Registration failed");
+      return;
+    }
+
+    alert("Account Created Successfully 🎉");
+    navigate("/");
+  } catch (error) {
+    console.error(error);
+    alert("Unable to connect to the server.");
+  }
 };
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
- 
 
   const inputStyle = {
     width: "100%",
@@ -223,16 +235,9 @@ export default function Signup() {
             }}
           >
             Already have an account?{" "}
-            <Link
-              to="/Home"
-              style={{
-                color: "#2e7d32",
-                textDecoration: "none",
-                fontWeight: "bold",
-              }}
-            >
-              Login
-            </Link>
+          <Link to="/login">
+  Login
+</Link>
           </p>
         </form>
       </div>

@@ -17,7 +17,16 @@ connectDatabase();
 
 app.use(express.json());
 app.use(cors());
+app.get("/", (req, res) => {
+  res.send("Backend is Running");
+});
 
+app.get("/api/v1/test", (req, res) => {
+  res.json({
+    success: true,
+    message: "API Working"
+  });
+});
 // Routes
 app.use('/api/v1/', products);
 app.use('/api/v1/user', userRouter);
