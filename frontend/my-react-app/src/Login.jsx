@@ -23,8 +23,8 @@ useEffect(() => {
 
      const handleLogin = async () => {
     try {
-      const response = await fetch(
-        "https://grocery-website-tzz5.onrender.com/api/v1",
+const response = await fetch(
+  "https://grocery-website-tzz5.onrender.com/api/v1/login",
         {
           method: "POST",
           headers: {
