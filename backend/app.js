@@ -20,7 +20,7 @@ app.use(cors());
 
 // Routes
 app.use('/api/v1/', products);
-app.use('/api/v1/', userRouter);
+app.use('/api/v1/user', userRouter);
 
 // Port (ONLY ONCE)
 const PORT = process.env.PORT || 8000;

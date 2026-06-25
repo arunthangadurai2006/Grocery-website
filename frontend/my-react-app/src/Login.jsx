@@ -22,34 +22,39 @@ useEffect(() => {
 }, []); 
 
      const handleLogin = async () => {
-    try {
-const response = await fetch(
-  "https://grocery-website-tzz5.onrender.com/api/v1/login",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email,
-            password,
-          }),
-        }
-      );
-
-      const data = await response.json();
-
-      if (data.success) {
-        alert("Login Success 🎉");
-        navigate("/Home");
-      } else {
-        alert("Invalid Email or Password");
+  try {
+    const response = await fetch(
+      "https://grocery-website-tzz5.onrender.com/api/v1/login",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
       }
-    } catch (error) {
-      console.error(error);
-      alert("Server Error");
+    );
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      alert(data.message || "Login failed");
+      return;
     }
-  };
+
+    if (data.success) {
+      alert("Login Success 🎉");
+      navigate("/Home");
+    } else {
+      alert(data.message || "Invalid Email or Password");
+    }
+  } catch (error) {
+    console.error("Login Error:", error);
+    alert("Unable to connect to the server. Please try again later.");
+  }
+};
 
   const inputStyle = {
   width: "100%",

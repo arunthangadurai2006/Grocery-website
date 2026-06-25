@@ -1,6 +1,6 @@
 const User = require("../models/User");
 
-// REGISTER USER (MISSING BEFORE)
+// REGISTER USER
 exports.registerUser = async (req, res) => {
   try {
     const user = await User.create(req.body);
@@ -10,6 +10,8 @@ exports.registerUser = async (req, res) => {
       user,
     });
   } catch (error) {
+    console.error("Register Error:", error);
+
     res.status(500).json({
       success: false,
       message: error.message,
@@ -19,19 +21,36 @@ exports.registerUser = async (req, res) => {
 
 // LOGIN USER
 exports.loginUser = async (req, res) => {
-  const { email, password } = req.body;
+  try {
+    const { email, password } = req.body;
 
-  const user = await User.findOne({ email, password });
+    if (!email || !password) {
+      return res.status(400).json({
+        success: false,
+        message: "Please enter email and password",
+      });
+    }
 
-  if (!user) {
-    return res.status(401).json({
+    const user = await User.findOne({ email, password });
+
+    if (!user) {
+      return res.status(401).json({
+        success: false,
+        message: "Invalid Email or Password",
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Login Successful",
+      user,
+    });
+  } catch (error) {
+    console.error("Login Error:", error);
+
+    res.status(500).json({
       success: false,
-      message: "Invalid Email or Password",
+      message: "Internal Server Error",
     });
   }
-
-  res.json({
-    success: true,
-    user,
-  });
 };
