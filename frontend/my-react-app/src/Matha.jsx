@@ -13,29 +13,19 @@ export default function Matha() {
   const navigate = useNavigate();
   const API = "https://grocery-website-tzz5.onrender.com/api/v1";
 
-  useEffect(() => {
-    fetch(`${API}/products`)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("RAW API RESPONSE:", data);
+useEffect(() => {
+  fetch(`${API}/products`)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("API DATA:", data);
 
-        const list = Array.isArray(data)
-          ? data
-          : data?.products
-          ? data.products
-          : data?.data
-          ? data.data
-          : data?.result
-          ? data.result
-          : [];
+      const list =
+        data?.products || data?.data || [];
 
-        setProducts(list);
-      })
-      .catch((err) => {
-        console.log("FETCH ERROR:", err);
-        setProducts([]);
-      });
-  }, []);
+      setProducts(list);
+    })
+    .catch((err) => console.log("FETCH ERROR:", err));
+}, []);
 
   const addToCart = (p) => setCart((c) => [...c, p]);
 

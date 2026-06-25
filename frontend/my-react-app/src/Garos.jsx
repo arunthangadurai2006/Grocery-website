@@ -10,7 +10,7 @@ export default function Matha() {
   const [showCart, setShowCart] = useState(false);
 
   // ✅ SAFE FOR VERCEL
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   const navigate = useNavigate();
   const API = "https://grocery-website-tzz5.onrender.com/api/v1";
