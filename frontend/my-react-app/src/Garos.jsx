@@ -11,12 +11,11 @@ export default function Matha() {
   const [showCart, setShowCart] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const navigate = useNavigate();
-  useEffect(() => {
-    fetch("http://localhost:8000/api/v1/products")
-      .then((res) => res.json())
-      .then((data) => setProducts(data.products || []))
-      .catch(console.error);
-  }, []);
+  const API = "https://grocery-website-tzz5.onrender.com/api/v1";
+  fetch(`${API}/products`)
+  .then(res => res.json())
+  .then((data) => setProducts(data || []))
+  .catch(console.error);
 
   useEffect(() => {
     const onResize = () => setIsMobile(window.innerWidth <= 768);
