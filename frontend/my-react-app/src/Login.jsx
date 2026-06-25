@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+
 import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -7,8 +8,20 @@ export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  ////////////////mobile reponsive
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
-  const handleLogin = async () => {
+useEffect(() => {
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 768);
+  };
+
+  window.addEventListener("resize", handleResize);
+
+  return () => window.removeEventListener("resize", handleResize);
+}, []); 
+
+     const handleLogin = async () => {
     try {
       const response = await fetch(
         "http://localhost:8000/api/v1/login",
@@ -39,76 +52,86 @@ export default function Login() {
   };
 
   const inputStyle = {
-    width: "100%",
-    padding: "14px",
-    marginBottom: "15px",
-    border: "1px solid #ddd",
-    borderRadius: "10px",
-    fontSize: "15px",
-    outline: "none",
-  };
+  width: "100%",
+  padding: "14px",
+  marginBottom: "15px",
+  border: "1px solid #ddd",
+  borderRadius: "10px",
+  fontSize: "15px",
+  outline: "none",
+  boxSizing: "border-box",
+};
 
   return (
+   
+    
+    <div
+  style={{
+    minHeight: "100vh",
+    display: "flex",
+    flexDirection: isMobile ? "column" : "row",
+    background: "#f5f5f5",
+  }}
+>
+
+  {/* MOBILE TOP IMAGE */}
+  {isMobile && (
     <div
       style={{
+        width: "100%",
+        height: "180px",
+        backgroundImage:
+          "url('https://images.unsplash.com/photo-1542838132-92c53300491e')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    />
+  )}
+
+  {/* LEFT IMAGE (desktop only) */}
+  {!isMobile && (
+    <div
+      style={{
+        flex: 1,
+        backgroundImage:
+          "url('https://images.unsplash.com/photo-1542838132-92c53300491e')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
         minHeight: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        background: "#f4f7f4",
-        padding: "20px",
+      }}
+    />
+  )}
+
+  {/* RIGHT SIDE / FORM */}
+  <div
+    style={{
+      flex: 1,
+      padding: isMobile ? "25px" : "50px",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "flex-start",
+      background: "#fff",
+    minHeight: isMobile ? "auto" : "100vh",
+    }}
+  >
+
+    {/* TITLE (always top on mobile) */}
+    <h1
+      style={{
+        color: "#2e7d32",
+        marginBottom: "10px",
+        fontSize: isMobile ? "28px" : "40px",
+        textAlign: isMobile ? "center" : "left",
       }}
     >
-      <div
-        style={{
-          width: "900px",
-          maxWidth: "100%",
-          background: "#fff",
-          borderRadius: "20px",
-          overflow: "hidden",
-          display: "flex",
-          boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
-        }}
-      >
-        {/* Left Side */}
-        <div
-          style={{
-            flex: 1,
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1542838132-92c53300491e')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            minHeight: "600px",
-          }}
-        />
+      FreshMart 🛒
+    </h1>
 
-        {/* Right Side */}
-        <div
-          style={{
-            flex: 1,
-            padding: "50px",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-          }}
-        >
-          <h1
-            style={{
-              color: "#2e7d32",
-              marginBottom: "10px",
-            }}
-          >
-            FreshMart 🛒
-          </h1>
+    <p style={{ color: "#666", marginBottom: "30px", textAlign: isMobile ? "center" : "left" }}>
+      Welcome back! Login to continue shopping.
+    </p>
 
-          <p
-            style={{
-              color: "#666",
-              marginBottom: "30px",
-            }}
-          >
-            Welcome back! Login to continue shopping.
-          </p>
+    {/* rest of your form stays SAME */}
 
           <input
             type="email"
@@ -226,6 +249,6 @@ export default function Login() {
           </p>
         </div>
       </div>
-    </div>
+    
   );
 }
