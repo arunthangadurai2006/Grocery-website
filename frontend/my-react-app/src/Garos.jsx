@@ -151,7 +151,7 @@ useEffect(() => {
         <h3 style={{ margin: 0 }}>Garos Supermarket</h3>
 
        <Link
-  to="/about"
+  to="/Login"
   style={{
     color: "#ffffff",
     fontWeight: "bold",

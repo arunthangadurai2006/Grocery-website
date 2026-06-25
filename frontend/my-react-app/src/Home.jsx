@@ -206,10 +206,7 @@ const snack = [{ id: 8, name: "Marie Gold", price: 35, brand: "Britannia", img: 
     title: "Rice",
     img: "https://tse4.mm.bing.net/th/id/OIP.DTFMsz1aVUpGjZhhQxnAcAHaE7?pid=Api&P=0&h=180"
   },
-  {
-    title: "Wheat Flour",
-    img: "https://tse3.mm.bing.net/th/id/OIP.dspxk-oazk7qImK8f55hrQHaFO?pid=Api&P=0&h=180"
-  },
+
   {
     title: "Sugar",
     img: "https://tse3.mm.bing.net/th/id/OIP.I1UanPT1KpZV21s87LPQ7wHaFc?pid=Api&P=0&h=180"
@@ -384,8 +381,8 @@ const brand1 = [  "https://tse2.mm.bing.net/th/id/OIP.JfvA1UHsY9760vCqFCf9GAHaHa
   />
 
      {/* PRODUCTS */} {/*page*/}
-   <div style={{ padding: "2px" }}>
-  <h2 style={{ marginBottom: "15px" }}>
+   <div style={{ padding: "2px" ,marginBottom: "15px"}}>
+  <h2 style={{ marginBottom: "15px" , marginLeft:"20px" }}>
     National store, Vallioor
   </h2>
 
@@ -489,15 +486,7 @@ const brand1 = [  "https://tse2.mm.bing.net/th/id/OIP.JfvA1UHsY9760vCqFCf9GAHaHa
   data={snacks} onClick={() => navigate("/Matha")}></HorizontalScroll>
 
 
-<hr
-  style={{
-    marginTop: "40px",
-    border: "none",
-    height: "5px",
-    backgroundColor: "#000000"
-  }}
-  
-/>
+
 </div>
         {/* PRODUCTS 4  1frame*/}
         <div className="frames">
@@ -604,15 +593,20 @@ const brand1 = [  "https://tse2.mm.bing.net/th/id/OIP.JfvA1UHsY9760vCqFCf9GAHaHa
         <p>AKmart grocery</p>
       </div>
 
-      <div>
+      <div> <div
+        style={{
+          borderLeft: "2px solid gray",
+          paddingLeft: "20px",
+        }}>
         <h3>HELP</h3>
         <p>Payment</p>
         <p>Shipping</p>
         <p>Returns</p>
         <p>FAQ</p>
-      </div>
+      </div> </div>
 
       <div>
+            
         <h3>CONSUMER POLICY</h3>
         <p>Terms of Use</p>
         <p>Security</p>
