@@ -15,22 +15,19 @@ export default function Matha() {
   const navigate = useNavigate();
   const API = "https://grocery-website-tzz5.onrender.com/api/v1";
 
-  // ✅ FIXED FETCH
-  useEffect(() => {
-    fetch(`${API}/products`)
-      .then(res => res.json())
-      .then((data) => {
-        console.log("API DATA:", data);
+useEffect(() => {
+  fetch(`${API}/products`)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("API DATA:", data);
 
-        const list =
-          Array.isArray(data)
-            ? data
-            : data.products || data.data || [];
+      const list =
+        data?.products || data?.data || [];
 
-        setProducts(list);
-      })
-      .catch((err) => console.log("API ERROR:", err));
-  }, []);
+      setProducts(list);
+    })
+    .catch((err) => console.log("FETCH ERROR:", err));
+}, []);
 
   // ✅ SAFE RESIZE (ONLY RUNS IN BROWSER)
   useEffect(() => {
@@ -150,9 +147,10 @@ export default function Matha() {
           flexWrap: "wrap",
         }}
       >
+        
         <h3 style={{ margin: 0 }}>Garos Supermarket</h3>
 
-        <Link to="/about" style={{ color: "#fff", fontWeight: "bold" }}>
+        <Link to="/about" style={{ color: "#ffffff", fontWeight: "bold" }}>
           Login
         </Link>
 
