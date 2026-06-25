@@ -11,6 +11,17 @@ import "./frame1.css";
 
 
 export default function Home(){
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+useEffect(() => {
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 768);
+  };
+
+  window.addEventListener("resize", handleResize);
+
+  return () => window.removeEventListener("resize", handleResize);
+}, []);
   const navigate =useNavigate();
  const shopRoutes = {
   "vallioor, garos supermarket": "/Garos",
@@ -567,23 +578,35 @@ const brand1 = [  "https://tse2.mm.bing.net/th/id/OIP.JfvA1UHsY9760vCqFCf9GAHaHa
   <div style={{ padding:"10"}}>
  
   
-  <footer
-      style={{
-        background: "#156028",
-        color: "white",
-        padding: "30px",
-        display: "flex",
-        justifyContent: "space-between",
-        flexWrap: "wrap",
-      }}
-    >
-      <div>
+ 
+
+  
+   <footer
+  style={{
+    background: "#156028",
+    color: "white",
+    padding: "30px",
+    display: "grid",
+    gridTemplateColumns: isMobile ? "repeat(2, minmax(0, 1fr))" : "repeat(5, 1fr)",
+    gap: "20px",
+    width: "100%",
+    boxSizing: "border-box",
+  }}
+>
+  
+
+      <div><div
+  style={{
+    minWidth: 0,
+    wordBreak: "break-word",
+  }}
+>
         <h3>ABOUT</h3>
         <p>Contact Us</p>
         <p>About</p>
         <p>Career</p>
         <p>AKmart</p>
-      </div>
+      </div></div>
 
       <div>
         <h3>GROUP COMPANIES</h3>
@@ -594,10 +617,10 @@ const brand1 = [  "https://tse2.mm.bing.net/th/id/OIP.JfvA1UHsY9760vCqFCf9GAHaHa
       </div>
 
       <div> <div
-        style={{
-          borderLeft: "2px solid gray",
-          paddingLeft: "20px",
-        }}>
+      style={{
+  borderLeft: isMobile ? "none" : "2px solid gray",
+  paddingLeft: isMobile ? "0" : "20px",
+}}>
         <h3>HELP</h3>
         <p>Payment</p>
         <p>Shipping</p>
