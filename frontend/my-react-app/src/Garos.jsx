@@ -142,7 +142,7 @@ useEffect(() => {
           color: "#fff",
           display: "flex",
           alignItems: "center",
-          gap: 15,
+          gap: 20,
           padding: "10px 15px",
           flexWrap: "wrap",
         }}
@@ -150,13 +150,28 @@ useEffect(() => {
         
         <h3 style={{ margin: 0 }}>Garos Supermarket</h3>
 
-        <Link to="/about" style={{ color: "#ffffff", fontWeight: "bold" }}>
-          Login
-        </Link>
+       <Link
+  to="/about"
+  style={{
+    color: "#ffffff",
+    fontWeight: "bold",
+   
+  }}
+>
+  Login
+</Link>
 
-        <Link to="/about" style={{ color: "#fff", fontWeight: "bold" }}>
-          About
-        </Link>
+        <Link
+  to="/about"
+  style={{
+    color: "#ffffff",
+    fontWeight: "bold",
+    marginRight: "10px",
+    marginLeft:"15px"
+  }}
+>
+  About
+</Link>
 
         <input
           value={search}

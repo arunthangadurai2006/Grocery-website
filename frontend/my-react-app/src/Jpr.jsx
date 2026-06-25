@@ -142,22 +142,36 @@ useEffect(() => {
           color: "#fff",
           display: "flex",
           alignItems: "center",
-          gap: 15,
+          gap: 20,
           padding: "10px 15px",
           flexWrap: "wrap",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 15 }}>
-          <h3 style={{ margin: 0 }}>JPR Supermarket</h3>
+        
+        <h3 style={{ margin: 0 }}>JPR Supermarket</h3>
 
-          <Link to="/about" style={{ color: "#fff", fontWeight: "bold" }}>
-            Login
-          </Link>
+       <Link
+  to="/about"
+  style={{
+    color: "#ffffff",
+    fontWeight: "bold",
+   
+  }}
+>
+  Login
+</Link>
 
-          <Link to="/about" style={{ color: "#fff", fontWeight: "bold" }}>
-            About
-          </Link>
-        </div>
+        <Link
+  to="/about"
+  style={{
+    color: "#ffffff",
+    fontWeight: "bold",
+    marginRight: "10px",
+    marginLeft:"15px"
+  }}
+>
+  About
+</Link>
 
         <input
           value={search}
@@ -165,7 +179,6 @@ useEffect(() => {
           placeholder="Search products..."
           style={{
             flex: 1,
-            minWidth: 0,
             padding: 10,
             borderRadius: 20,
             border: "none",
@@ -191,27 +204,27 @@ useEffect(() => {
       {/* BODY */}
       <div style={{ display: isMobile ? "block" : "flex" }}>
         {/* CATEGORY */}
-        <div
-          style={{
-            width: isMobile ? "100%" : 220,
-            display: "flex",
-            flexDirection: isMobile ? "row" : "column",
-            overflowX: isMobile ? "auto" : "visible",
-            gap: 10,
-            padding: 10,
-            background: "#fff",
-            position: isMobile ? "static" : "sticky",
-            top: 70,
-            height: "fit-content",
-          }}
-        >
+       <div
+  style={{
+    width: isMobile ? "100%" : 220,
+    display: "flex",
+    flexDirection: isMobile ? "row" : "column",
+    gap: 10,
+    padding: 10,
+    background: "#fff",
+
+    // ✅ FIX ADDED
+    overflowX: isMobile ? "auto" : "visible",
+    whiteSpace: isMobile ? "nowrap" : "normal",
+  }}
+>
           {["all", "Vegetables", "Fruits", "Snacks", "Masala"].map((c) => (
             <button
               key={c}
               style={buttonStyle(c)}
               onClick={() => setSelectedCategory(c)}
             >
-              {c === "all" ? "All Products" : c}
+              {c}
             </button>
           ))}
         </div>
@@ -229,7 +242,7 @@ useEffect(() => {
           }}
         >
           {filteredProducts.length === 0 ? (
-            <h3>No products found.</h3>
+            <h3>No products found</h3>
           ) : (
             filteredProducts.map((p) => (
               <div
@@ -238,7 +251,6 @@ useEffect(() => {
                   background: "#fff",
                   borderRadius: 12,
                   padding: 12,
-                  boxShadow: "0 2px 8px rgba(0,0,0,.08)",
                 }}
               >
                 <img
@@ -259,7 +271,6 @@ useEffect(() => {
                   style={{
                     display: "flex",
                     justifyContent: "space-between",
-                    alignItems: "center",
                     marginTop: 10,
                   }}
                 >
@@ -273,7 +284,6 @@ useEffect(() => {
                       color: "#198754",
                       background: "#fff",
                       borderRadius: 6,
-                      cursor: "pointer",
                     }}
                   >
                     ADD
@@ -283,22 +293,6 @@ useEffect(() => {
             ))
           )}
         </div>
-
-        {/* CART DESKTOP */}
-        {!isMobile && (
-          <div
-            style={{
-              width: 300,
-              padding: 15,
-              background: "#fff",
-              position: "sticky",
-              top: 70,
-              height: "fit-content",
-            }}
-          >
-            {cartView}
-          </div>
-        )}
       </div>
 
       {/* MOBILE CART */}
@@ -327,17 +321,7 @@ useEffect(() => {
               overflowY: "auto",
             }}
           >
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-              }}
-            >
-              <h2>🛒 Cart</h2>
-              <button onClick={() => setShowCart(false)}>❌</button>
-            </div>
-
+            <h2>🛒 Cart</h2>
             {cartView}
           </div>
         </div>
