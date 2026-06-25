@@ -1,0 +1,153 @@
+.frames {
+  display: flex;
+  gap: 50px;
+  padding: 10px;
+  overflow: auto;
+  width: 90%;
+}
+
+.frame-space {
+  padding: 10px;
+}
+
+.store-card {
+  width: 30%;
+  padding: 20px;
+  background-color: #faf5f5;
+  border: 1px solid #d7d1c6;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.store-card:hover {
+  transform: scale(1.02);
+}
+
+.store-heading {
+  margin-top: 1%;
+  padding: 5px;
+  font-size: 40px;
+}
+
+.store-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.store-image {
+  width: 80%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+
+
+/* ===========================
+   Responsive Design
+=========================== */
+
+/* Large Laptop */
+@media (max-width: 1200px) {
+  .store-card {
+    width: 45%;
+  }
+
+  .store-heading {
+    font-size: 32px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .frames {
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .store-card {
+    width: 60%;
+  }
+
+  .store-heading {
+    font-size: 28px;
+  }
+
+  .store-image {
+    height: 130px;
+  }
+}
+
+/* Small Tablet */
+@media (max-width: 768px) {
+  .frames {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    overflow: visible;
+  }
+
+  .frame-space {
+    display: none;
+  }
+
+  .store-card {
+    width: 95%;
+  }
+
+  .store-grid {
+    gap: 15px;
+  }
+
+  .store-heading {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .store-image {
+    width: 100%;
+    height: 120px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .store-card {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .store-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .store-heading {
+    font-size: 20px;
+  }
+
+  .store-image {
+    width: 100%;
+    height: 100px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 400px) {
+  .store-heading {
+    font-size: 18px;
+  }
+
+  .store-grid {
+    gap: 8px;
+  }
+
+  .store-image {
+    height: 90px;
+  }
+}

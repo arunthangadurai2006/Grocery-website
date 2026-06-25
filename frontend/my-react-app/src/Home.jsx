@@ -1,7 +1,15 @@
+
 import { Link } from "react-router-dom";
 import React,{useState,useEffect} from "react";
 import HorizontalScroll from "./HorizontalScroll";
 import {useNavigate} from "react-router-dom";
+import "./navbar.css";
+import "./product1.css";
+import "./frame1.css";
+
+
+
+
 export default function Home(){
   const navigate =useNavigate();
  const shopRoutes = {
@@ -16,7 +24,7 @@ const filteredShops = Object.keys(shopRoutes).filter(shop =>
   shop.toLowerCase().startsWith(search.toLowerCase())
 );
 
-
+const [menuOpen, setMenuOpen] = useState(false);
     
      const Groceries = [
   { id: 1, name: "Rice", category: "Groceries", price: 65, img: "https://tse4.mm.bing.net/th/id/OIP.DTFMsz1aVUpGjZhhQxnAcAHaE7?pid=Api&P=0&h=180" },
@@ -269,23 +277,11 @@ const brand1 = [  "https://tse2.mm.bing.net/th/id/OIP.JfvA1UHsY9760vCqFCf9GAHaHa
     <div style={{ background: "#bee6c8" }}>
   
   {/* NAVBAR */}
-  <div
-    style={{
-      Height: 60,
-      background: "#156028",
-      color: "white",
-      display: "flex",
-      alignItems: "center",
-      padding: "10px",
-      flexWrap: "100",   
-      gap: "10px",
-       position: "sticky",
-    top: "0px",
-    height: "fit-content",
-    alignSelf: "flex-start",
-
-    }}
-  >
+  <div className= "nav">
+  
+  <div style={{ paddingTop: "70px" }}>
+  {/* Rest of your page */}
+</div>
     {/* Logo */}
     <h2 style={{ margin: "0 20px  0" }}>Akmart</h2>
 
@@ -359,20 +355,19 @@ const brand1 = [  "https://tse2.mm.bing.net/th/id/OIP.JfvA1UHsY9760vCqFCf9GAHaHa
 </div>
 
     {/* Menu */}
-    <Link
-          to="/About"
-          style={{ color: "white", textDecoration: "none", fontFamily:"arival", padding: "1px 15px",}}
-        >
-          <h2>About us </h2>
-        </Link>
-    
-    
-      <Link
-          to="/Login"
-          style={{ color: "white", textDecoration: "none", fontFamily:"arival", padding: "1px 15px",}}
-        >
-          <h2>Login </h2>
-        </Link>
+    {/* Right side */}
+<div className="right-section">
+
+  <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+    ☰
+  </div>
+
+  <div className={`menu ${menuOpen ? "open" : ""}`}>
+    <Link to="/About" onClick={() => setMenuOpen(false)}>About</Link>
+    <Link to="/Login" onClick={() => setMenuOpen(false)}>Login</Link>
+  </div>
+
+</div>
        
   </div>
 
@@ -389,46 +384,30 @@ const brand1 = [  "https://tse2.mm.bing.net/th/id/OIP.JfvA1UHsY9760vCqFCf9GAHaHa
   />
 
      {/* PRODUCTS */} {/*page*/}
-    <div style={{ padding: 20 }}>
-      <h2>National store, vallioor
-        
-      </h2>
+   <div style={{ padding: "2px" }}>
+  <h2 style={{ marginBottom: "15px" }}>
+    National store, Vallioor
+  </h2>
 
-      <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-        {categories.map((item, i) => (
-          <Link
-            key={i}
-            to="/national"
-            style={{ textDecoration: "none", color: "black" }}
-          >
-            <div
-              style={{
-                width: 150,
-                padding: 20,
-                backgroundColor: "#f9f8f8",
-                border: "1px solid #d7d1c6",
-                borderRadius: 10,
-                cursor: "pointer",
-              }}
-            >
-              <img
-                src={item.img}
-                alt={item.title}
-                style={{
-                  width: "100%",
-                  height: 150,
-                  objectFit: "cover",
-                  borderRadius: 20,
-                }}
-              />
-              <p style={{ textAlign: "center", fontWeight: "bold" }}>
-                
-                {item.title}
-              </p>
-            </div>
-          </Link>
-        ))}
+  {/* PRODUCTS GRID */}
+  {/* PRODUCTS GRID */}
+<div className="products-grid">
+  {categories.map((item, i) => (
+    <Link key={i} to="/national" className="product-link">
+      <div className="product-card">
+        <img
+          src={item.img}
+          alt={item.title}
+          className="product-image"
+        />
+
+        <p className="product-title">
+          {item.title}
+        </p>
       </div>
+    </Link>
+  ))}
+</div>
     
        <HorizontalScroll
   title="Groceries"
@@ -436,171 +415,77 @@ const brand1 = [  "https://tse2.mm.bing.net/th/id/OIP.JfvA1UHsY9760vCqFCf9GAHaHa
   onClick={() => navigate("/National")}
 />
         {/* PRODUCTS 4  1frame*/}
-        <div
-  style={{
-    display: "flex",
-    gap: "30px",
-    padding: "30px",
-      overflow: "auto",
-     width: "90%",
+       <div className="frames">
+  <div className="frame-space"></div>
 
-  
-  }}
->   <div style={{ padding: 10 }}></div>
-       <div
-  onClick={() => navigate("/Matha")}
-  style={{
-    width: "30%",
-    padding: "20px",
-    backgroundColor: "#faf5f5",
-    border: "1px solid #d7d1c6",
-    borderRadius: "20px",
-    cursor: "pointer",
-    transition: "0.3s"
-  }}
->
-        <h2 style={{marginTop: "1%", padding:"5px",fontSize: "40px"}}>matha stores</h2>
+  <div
+    className="store-card"
+    onClick={() => navigate("/Matha")}
+  >
+    <h2 className="store-heading">Matha Stores</h2>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(2, 1fr)",
-          gap: "20px",
-          justifyContent:"space-between",
-          alignItems:"flex-start"
-             
-        }}
-      >
-        {brand2.map((img, index) => (
-          <img
-            key={index}
-            src={img}
-            alt="item"
-            style={{
-              width: "80%",
-              height: 150,
-             objectfit: "cover",
-             
-             
-              borderRadius: "6px"
-             
-             
-           
-       
-            }}
-          />
-        ))}
-      </div>
-      </div>
+    <div className="store-grid">
+      {brand2.map((img, index) => (
+        <img
+          key={index}
+          src={img}
+          alt="item"
+          className="store-image"
+        />
+      ))}
+    </div>
+  </div>
+
       
       
                {/* PRODUCTS 4  2 frame*/}
-        <div style={{ padding: 10 }}></div>
-       <div
-  onClick={() => navigate("/Naga")}
-  style={{
-    width: "30%",
-    padding: "20px",
-    backgroundColor: "#faf5f5",
-    border: "1px solid #d7d1c6",
-    borderRadius: "20px",
-    cursor: "pointer",
-    transition: "0.3s"
-  }}
->
-        <h2 style={{marginTop: "1%", padding:"5px",fontSize: "40px"}}>Naga supermart</h2>
+         <div
+    className="store-card"
+    onClick={() => navigate("/naga")}
+  >
+    <h2 className="store-heading">Naga Stores</h2>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(2, 1fr)",
-          gap: "20px",
-          justifyContent:"space-between",
-          alignItems:"flex-start"
-             
-        }}
-      >
-        {brand1.map((img, index) => (
-          <img
-            key={index}
-            src={img}
-            alt="item"
-            style={{
-              width: "80%",
-              height: 150,
-             objectfit: "cover",
-             
-             
-              borderRadius: "6px"
-             
-             
-           
-       
-            }}
-          />
-        ))}
-      </div>
-      </div>
+    <div className="store-grid">
+      {brand1.map((img, index) => (
+        <img
+          key={index}
+          src={img}
+          alt="item"
+          className="store-image"
+        />
+      ))}
+    </div>
+  </div>
       
                {/* //////////////////PRODUCTS 4  3 frame*/}
-       <div style={{ padding: 10 }}></div>
        <div
-  onClick={() => navigate("/Garos")}
-  style={{
-    width: "30%",
-    padding: "20px",
-    backgroundColor: "#faf5f5",
-    border: "1px solid #d7d1c6",
-    borderRadius: "20px",
-    cursor: "pointer",
-    transition: "0.3s"
-  }}
->
-        <h2 style={{marginTop: "1%", padding:"5px",fontSize: "40px"}}>garos market </h2>
+    className="store-card"
+    onClick={() => navigate("/Garos")}
+  >
+    <h2 className="store-heading">Garos super market</h2>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(2, 1fr)",
-          gap: "20px",
-          justifyContent:"space-between",
-          alignItems:"flex-start"
-             
-        }}
-      >
-        {brand3.map((img, index) => (
-          <img
-            key={index}
-            src={img}
-            alt="item"
-            style={{
-              width: "80%",
-              height: 150,
-             objectfit: "cover",
-             
-             
-              borderRadius: "6px"
-             
-             
-           
-       
-            }}
-          />
-        ))}
-      </div>
-      </div>
-       
+    <div className="store-grid">
+      {brand3.map((img, index) => (
+        <img
+          key={index}
+          src={img}
+          alt="item"
+          className="store-image"
+        />
+      ))}
+    </div>
+  </div>
       </div>
       </div>
       
  <HorizontalScroll
   title="Naga store with branded products"
   data={grocery1}
-  onClick={() => navigate("/National")}></HorizontalScroll>
+  onClick={() => navigate("/Naga")}></HorizontalScroll>
 
 <HorizontalScroll
 
- title=" Matha storesst Snacks & Drinks"
+ title=" Matha stores Snacks & Drinks"
   data={snacks} onClick={() => navigate("/Matha")}></HorizontalScroll>
 
 
@@ -615,169 +500,77 @@ const brand1 = [  "https://tse2.mm.bing.net/th/id/OIP.JfvA1UHsY9760vCqFCf9GAHaHa
 />
 </div>
         {/* PRODUCTS 4  1frame*/}
-        <div
-  style={{
-    display: "flex",
-    gap: "30px",
-    padding: "30px",
-      overflowX: "auto",
-     width: "90%"
-  }}
- >   <div style={{ padding: 10 }}></div>
-       <div
-  onClick={() => navigate("/Jpr")}
-  style={{
-    width: "30%",
-    padding: "20px",
-    backgroundColor: "#faf5f5",
-    border: "1px solid #d7d1c6",
-    borderRadius: "20px",
-    cursor: "pointer",
-    transition: "0.3s"
-  }}
- >
-        <h2 style={{marginTop: "1%", padding:"5px",fontSize: "40px"}}>JPR stores</h2>
+        <div className="frames">
+  <div className="frame-space"></div>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(2, 1fr)",
-          gap: "20px",
-          justifyContent:"space-between",
-          alignItems:"flex-start"
-             
-        }}
-      >
-        {brand3.map((img, index) => (
-          <img
-            key={index}
-            src={img}
-            alt="item"
-            style={{
-              width: "80%",
-              height: 150,
-             objectfit: "cover",
-             
-             
-              borderRadius: "6px"
-             
-             
-           
-       
-            }}
-          />
-        ))}
-      </div>
-      </div>
+  <div
+    className="store-card"
+    onClick={() => navigate("/Jpr")}
+  >
+    <h2 className="store-heading">JPR super market</h2>
+
+    <div className="store-grid">
+      {brand2.map((img, index) => (
+        <img
+          key={index}
+          src={img}
+          alt="item"
+          className="store-image"
+        />
+      ))}
+    </div>
+  </div>
       
       
                {/* PRODUCTS 4  2 frame*/}
-        <div style={{ padding: 10 }}></div>
-       <div
-  onClick={() => navigate("/National")}
-  style={{
-    width: "30%",
-    padding: "20px",
-    backgroundColor: "#faf5f5",
-    border: "1px solid #d7d1c6",
-    borderRadius: "20px",
-    cursor: "pointer",
-    transition: "0.3s"
-  }}
- >
-        <h2 style={{marginTop: "1%", padding:"5px",fontSize: "40px"}}>national stores</h2>
+         <div
+    className="store-card"
+    onClick={() => navigate("/National")}
+  >
+    <h2 className="store-heading">national super market</h2>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(2, 1fr)",
-          gap: "20px",
-          justifyContent:"space-between",
-          alignItems:"flex-start"
-             
-        }}
-      >
-        {brand1.map((img, index) => (
-          <img
-            key={index}
-            src={img}
-            alt="item"
-            style={{
-              width: "80%",
-              height: 150,
-             objectfit: "cover",
-             
-             
-              borderRadius: "6px"
-             
-             
-           
-       
-            }}
-          />
-        ))}
-      </div>
-      </div>
+    <div className="store-grid">
+      {brand2.map((img, index) => (
+        <img
+          key={index}
+          src={img}
+          alt="item"
+          className="store-image"
+        />
+      ))}
+    </div>
+  </div>
       
                {/* //////////////////PRODUCTS 4  3 frame*/}
-       <div style={{ padding: 10 }}></div>
-       <div
-  onClick={() => navigate("/Garos")}
-  style={{
-    width: "30%",
-    padding: "20px",
-    backgroundColor: "#faf5f5",
-    border: "1px solid #d7d1c6",
-    borderRadius: "20px",
-    cursor: "pointer",
-    transition: "0.3s"
-  }}
- >
-        <h2 style={{marginTop: "1%", padding:"5px",fontSize: "40px"}}>garos market </h2>
+         <div
+    className="store-card"
+    onClick={() => navigate("/Matha")}
+  >
+    <h2 className="store-heading">Matha Stores</h2>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(2, 1fr)",
-          gap: "20px",
-          justifyContent:"space-between",
-          alignItems:"flex-start"
-             
-        }}
-      >
-        {brand2.map((img, index) => (
-          <img
-            key={index}
-            src={img}
-            alt="item"
-            style={{
-              width: "80%",
-              height: 150,
-             objectfit: "cover",
-             
-             
-              borderRadius: "6px"
-             
-             
-           
-       
-            }}
-          />
-        ))}
-      </div>
-      </div>
+    <div className="store-grid">
+      {brand2.map((img, index) => (
+        <img
+          key={index}
+          src={img}
+          alt="item"
+          className="store-image"
+        />
+      ))}
+    </div>
+  </div>
        
       </div>
       
       <HorizontalScroll
-  title="Naga store with  Best products"
+  title="JPR store with  Best products"
   data={Groceries}
-  onClick={() => navigate("/National")}></HorizontalScroll>
+  onClick={() => navigate("/Jpr")}></HorizontalScroll>
 
  <HorizontalScroll
 
- title=" Matha storesst Snacks & Drinks"
-  data={snack} onClick={() => navigate("/Matha")}></HorizontalScroll>
+ title=" Garos storesst Snacks & Drinks"
+  data={snack} onClick={() => navigate("/Garos")}></HorizontalScroll>
 
 
   
@@ -835,9 +628,10 @@ const brand1 = [  "https://tse2.mm.bing.net/th/id/OIP.JfvA1UHsY9760vCqFCf9GAHaHa
       >
         <h3>contact Us</h3>
 
-        <p> email: arunthangadurai@gmail.com</p>
+        <p>📧
+   email: arunthangadurai2006@gmail.com</p>
         
-        <p>mobile: XXXXXXXXXX</p>
+        <p>☎️ mobile: XXXXXXXXXX</p>
       </div>
 
      

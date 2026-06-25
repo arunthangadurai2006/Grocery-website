@@ -1,257 +1,253 @@
+// Due to response size limits, paste your existing imports.
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function National() {
+export default function Matha() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
   const [search, setSearch] = useState("");
-
+  const [showCart, setShowCart] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const navigate = useNavigate();
   useEffect(() => {
     fetch("http://localhost:8000/api/v1/products")
       .then((res) => res.json())
-      .then((data) => {
-        setProducts(data.products || []);
-      })
-      .catch((err) => console.error("Error fetching products:", err));
+      .then((data) => setProducts(data.products || []))
+      .catch(console.error);
   }, []);
 
-  const addToCart = (product) => {
-    setCart([...cart, product]);
-  };
+  useEffect(() => {
+    const onResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
 
-  const totalAmount = cart.reduce(
-    (total, item) => total + Number(item.price),
-    0
+  const addToCart = (p) => setCart((c) => [...c, p]);
+
+  const totalAmount = cart.reduce((t, i) => t + Number(i.price), 0);
+
+  const filteredProducts = products.filter((p) => {
+    const s = p.name.toLowerCase().includes(search.toLowerCase());
+    const c =
+      selectedCategory === "all" ||
+      p.category?.toLowerCase() === selectedCategory.toLowerCase();
+    return s && c;
+  });
+
+  const buttonStyle = (cat) => ({
+    background: selectedCategory === cat ? "#198754" : "#fff",
+    color: selectedCategory === cat ? "#fff" : "#000",
+    border: "1px solid #ddd",
+    borderRadius: 8,
+    padding: "12px",
+    cursor: "pointer",
+    minWidth: isMobile ? 120 : "100%",
+    fontWeight: 600,
+  });
+const removeFromCart = (index) => {
+  setCart(cart.filter((_, i) => i !== index));
+};
+  const cartView = (
+    <>
+     
+      {cart.length===0 ? <p>No items added</p> :
+       cart.map((item, index) => (
+  <div
+    key={index}
+    style={{
+      padding: "10px 0",
+      borderBottom: "1px solid #eee",
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+    }}
+  >
+    <div>
+      <strong>{item.name}</strong>
+      <div>₹{item.price}</div>
+    </div>
+
+    <button
+      onClick={() => removeFromCart(index)}
+      style={{
+        width: "30px",
+        height: "30px",
+        border: "none",
+        borderRadius: "50%",
+        background: "red",
+        color: "white",
+        fontSize: "18px",
+        cursor: "pointer",
+      }}
+    >
+       ✕
+    </button>
+  </div>
+))
+      }
+      <h3>Total: ₹{totalAmount}</h3>
+    <button
+  onClick={() => navigate("/checkout", { state: { cart } })}
+  style={{
+    width: "100%",
+    padding: 12,
+    border: "none",
+    background: "#198754",
+    color: "#fff",
+    borderRadius: 8,
+    marginTop: 10
+  }}
+>
+  Checkout
+</button>
+    </>
   );
 
-  const filteredProducts = products.filter((product) => {
-    const matchesSearch = product.name
-      .toLowerCase()
-      .includes(search.toLowerCase());
-
-    const matchesCategory =
-      selectedCategory === "all" ||
-      product.category?.toLowerCase() === selectedCategory.toLowerCase();
-
-    return matchesSearch && matchesCategory;
-  });
-
-  // ✅ ACTIVE CATEGORY STYLE FIX
-  const getCategoryStyle = (category) => ({
-    background: selectedCategory === category ? "green" : "white",
-    color: selectedCategory === category ? "white" : "black",
-    padding: "15px",
-    marginBottom: "10px",
-    borderRadius: "10px",
-    cursor: "pointer",
-    textAlign: "center",
-    border: "1px solid #ddd",
-    transition: "0.2s",
-  });
-
   return (
-    <div style={{ background: "#bee6c8" }}>
-      {/* Navbar */}
-      <div
-        style={{
-          height: "60",
-          background: "#156028",
-          color: "white",
-          display: "flex",
-          alignItems: "center",
-          padding: "10px 20px",
-          gap: "20px",
-           
-    
-    position: "sticky",
-    top: "0px",
-  
-    alignSelf: "flex-start",
-  
-        }}
-      >
-        <h2 style={{ margin: 0 }}>National Supermarket</h2>
+    <div style={{background:"#bee6c8",minHeight:"100vh"}}>
+      <div style={{
+        position:"sticky",top:0,zIndex:1000,
+        background:"#156028",color:"#fff",
+        display:"flex",alignItems:"center",
+        gap:15,padding:"10px 15px",flexWrap:"wrap"
+      }}>
+        <div style={{display:"flex",alignItems:"center",gap:15}}>
+          <h3 style={{margin:0}}>National Supermarket</h3>
+          <Link to="/about" style={{color:"#fff",textDecoration:"none", marginLeft:"80px", fontWeight: "bold"}}>Login</Link>
+            <Link to="/about" style={{color:"#fff",textDecoration:"none", marginLeft:"8px", fontWeight: "bold"}}>About</Link>
+        </div>
 
         <input
-          type="text"
-          placeholder="Search products..."
           value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={(e)=>setSearch(e.target.value)}
+          placeholder="Search products..."
           style={{
-            flex: 1,
-            padding: "8px 15px",
-            borderRadius: "999px",
-            border: "none",
-            fontSize: "16px",
+            flex:1,minWidth:0,
+            padding:10,borderRadius:20,border:"none"
           }}
         />
 
-        <Link to="/about" style={{ color: "white", textDecoration: "none" }}>
-          <h2>Login</h2>
-        </Link>
-      </div>
-
-      <div style={{ display: "flex", minHeight: "100vh" }}>
-        
-        {/* Sidebar */}
-        <div
-          style={{
-            width: "200px",
-            background: "#fff",
-            padding: "10px",
-            display: "flex",
-            flexDirection: "column",
-            gap: "10px",
-            //sticky
-             position: "sticky",
-    top: "70px",
-    height: "fit-content",
-    alignSelf: "flex-start",
-          }}
-        >
-          <h3>Categories</h3>
-
+        {isMobile && (
           <button
-            style={getCategoryStyle("all")}
-            onClick={() => setSelectedCategory("all")}
-          >
-            All Products
-          </button>
-
-          <button
-            style={getCategoryStyle("Vegetables")}
-            onClick={() => setSelectedCategory("Vegetables")}
-          >
-            Fresh Vegetables
-          </button>
-
-          <button
-            style={getCategoryStyle("Fruits")}
-            onClick={() => setSelectedCategory("Fruits")}
-          >
-            Fresh Fruits
-          </button>
-
-          <button
-            style={getCategoryStyle("Snacks")}
-            onClick={() => setSelectedCategory("Snacks")}
-          >
-            Snacks
-          </button>
-
-          <button
-            style={getCategoryStyle("Masala")}
-            onClick={() => setSelectedCategory("Masala")}
-          >
-            Masala Powders
-          </button>
-        </div>
-
-        {/* Products */}
-        <div
-          style={{
-            flex: 1,
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill,minmax(220px,1fr))",
-            gap: "5px",
-            padding: "10px",
-            height: "50"
-
-
-          }}
-        >
-          {filteredProducts.length === 0 ? (
-            <h3>No products found</h3>
-          ) : (
-            filteredProducts.map((product) => (
-              <div
-                key={product._id}
-                style={{
-                  border: "1px solid #ddd",
-                  borderRadius: "10px",
-                  padding: "10px",
-                  background: "#fff",
-                }}
-              >
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  style={{
-                    width: "100%",
-                    height: "160px",
-                    objectFit: "cover",
-                    borderRadius: "8px",
-                  }}
-                />
-
-               < h3>{product.name}</h3>
-               <h4> stock: {product.stock}</h4>
-
-                <div style={{ display: "flex", justifyContent: "space-between" }}>
-                  <h2><span>₹{product.price}</span></h2>
-
-                  <button
-                    onClick={() => addToCart(product)}
-                    style={{
-                      padding: "8px 12px",
-                      border: "1px solid green",
-                      color: "white",
-                      background: "green",
-                      borderRadius: "5px",
-                    }}
-                  >
-                    ADD 
-                  </button>
-                </div>
-              </div>
-            ))
-          )}
-        </div>
-
-        {/* Cart */}
-        <div
-          style={{
-            width: "300px",
-            background: "#fff",
-            padding: "15px",
-            borderLeft: "1px solid #ddd",
-             position: "sticky",
-    top: "70px",
-    height: "fit-content",
-    alignSelf: "flex-start",
-          }}
-        >
-          <h2>🛒 Cart</h2>
-
-          {cart.length === 0 ? (
-            <p>No items added</p>
-          ) : (
-            cart.map((item, index) => (
-              <div key={index}>
-                <h4>{item.name}</h4>
-                <p>₹{item.price}</p>
-              </div>
-            ))
-          )}
-
-          <hr />
-          <h3>Total: ₹{totalAmount}</h3>
-
-          <button
+            onClick={()=>setShowCart(true)}
             style={{
-              width: "100%",
-              padding: "10px",
-              background: "green",
-              color: "white",
-              border: "none",
-              borderRadius: "5px",
+              border:"none",borderRadius:20,
+              padding:"8px 16px",background:"#fff",color:"#198754"
             }}
           >
-            Checkout
+            🛒 {cart.length}
           </button>
-        </div>
+        )}
       </div>
+
+      <div style={{display:isMobile?"block":"flex"}}>
+        <div style={{
+          width:isMobile?"100%":220,
+          display:"flex",
+          flexDirection:isMobile?"row":"column",
+          overflowX:isMobile?"auto":"visible",
+          gap:10,padding:10,background:"#fff",
+          position:isMobile?"static":"sticky",
+          top:70,height:"fit-content"
+        }}>
+          {["all","Vegetables","Fruits","Snacks","Masala"].map(c=>(
+            <button key={c} style={buttonStyle(c)} onClick={()=>setSelectedCategory(c)}>
+              {c==="all"?"All Products":c}
+            </button>
+          ))}
+        </div>
+
+        <div style={{
+          flex:1,
+          display:"grid",
+          gridTemplateColumns:isMobile?"repeat(2,1fr)":"repeat(auto-fill,minmax(220px,1fr))",
+          gap:15,padding:15
+        }}>
+          {filteredProducts.length===0 ? (
+            <h3>No products found.</h3>
+          ) : filteredProducts.map(p=>(
+            <div key={p._id}
+              style={{
+                background:"#fff",borderRadius:12,padding:12,
+                boxShadow:"0 2px 8px rgba(0,0,0,.08)"
+              }}>
+              <img src={p.image} alt={p.name}
+                style={{
+                  width:"100%",height:170,
+                  objectFit:"cover",borderRadius:8
+                }}/>
+              <h3>{p.name}</h3>
+              <div>Stock: {p.stock}</div>
+              <div style={{
+                display:"flex",
+                justifyContent:"space-between",
+                alignItems:"center",
+                marginTop:10
+              }}>
+                <strong>₹{p.price}</strong>
+                <button
+                  onClick={()=>addToCart(p)}
+                  style={{
+                    padding:"8px 12px",
+                    border:"1px solid #198754",
+                    color:"#198754",
+                    background:"#fff",
+                    borderRadius:6,
+                    cursor:"pointer"
+                  }}>
+                  ADD
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {!isMobile && (
+          <div style={{
+            width:300,padding:15,
+            background:"#fff",
+            position:"sticky",top:70,
+            height:"fit-content"
+          }}>
+            {cartView}
+          </div>
+        )}
+      </div>
+
+      {isMobile && showCart && (
+        <div
+          onClick={()=>setShowCart(false)}
+          style={{
+            position:"fixed",inset:0,
+            background:"rgba(0,0,0,.35)",
+            zIndex:2000
+          }}>
+          <div
+            onClick={(e)=>e.stopPropagation()}
+            style={{
+              position:"absolute",
+              left:0,right:0,bottom:0,
+              background:"#fff",
+              padding:20,
+              borderTopLeftRadius:20,
+              borderTopRightRadius:20,
+              maxHeight:"70vh",
+              overflowY:"auto"
+            }}>
+            <div style={{
+              display:"flex",
+              justifyContent:"space-between",
+              alignItems:"center"
+            }}>
+              <h2>🛒 Cart</h2>
+              <button onClick={()=>setShowCart(false)}>❌</button>
+            </div>
+            {cartView}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -10,7 +10,8 @@ import Naga from "./Naga";
 import HorizontalScroll from "./HorizontalScroll";
 import Signup from "./Signup";
 import About from './About';
-
+import Checkout from "./Checkout";
+import OrderSuccess from "./OrderSuccess";
 function App() {
   return (
     <Routes>
@@ -26,6 +27,11 @@ function App() {
       <Route path="/Naga" element={<Naga />} />
       <Route path="/HorizontalScroll" element={<HorizontalScroll />} />
       <Route path="/Signup" element={<Signup />} />
+      <Route path="/checkout" element={<Checkout />} />
+      <Route
+  path="/order-success"
+  element={<OrderSuccess />}
+/>
     </Routes>
   );
 }

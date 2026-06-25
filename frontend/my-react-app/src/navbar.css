@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* NAVBAR */
+.nav {
+    position: fixed; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #156028;
+  color: white;
+
+  padding: 10px 20px;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* LOGO */
+.nav h2 {
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* SEARCH */
+.search-container {
+  flex: 1;
+  max-width: 450px;
+  margin: 0 20px;
+  position: relative;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 999px;
+  border: none;
+  outline: none;
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  color: black;
+  z-index: 99999;
+}
+
+/* RIGHT SECTION */
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* MENU */
+.menu {
+  display: flex;
+  gap: 15px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  .nav {
+    padding: 10px 12px;
+  }
+
+  /* LOGO */
+  .nav h2 {
+    font-size: 18px;
+  }
+
+  /* SEARCH FIX */
+  .search-container {
+    flex: 1;
+    max-width: 180px;   /* 🔥 proper mobile size */
+    margin: 0 10px;
+  }
+
+  .search-container input {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  /* HAMBURGER */
+  .hamburger {
+    display: block;
+  }
+
+  /* MENU DROPDOWN */
+  .menu {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+
+    background: #0f3f1f;
+    flex-direction: column;
+
+    padding: 10px;
+    border-radius: 8px;
+
+    display: none;
+    z-index: 9999;
+  }
+
+  .menu.open {
+    display: flex;
+  }
+}
