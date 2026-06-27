@@ -1,7 +1,8 @@
 # Grocery Website
 
 ## Live Demo
-🌐 https://grocery-website-lake.vercel.app/national
+🌐 https://grocery-website-lake.vercel.app
+
 
 ## Features
 - User Login
