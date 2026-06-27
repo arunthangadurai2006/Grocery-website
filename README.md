@@ -1,2 +1,19 @@
-# Grocery-website
-🛒 Full-Stack Grocery E-Commerce Website built with the MERN Stack featuring JWT authentication, product browsing, search, shopping cart, responsive UI, and MongoDB database.
+# Grocery Website
+
+## Live Demo
+🌐 https://grocery-website-lake.vercel.app/national
+
+## Features
+- User Login
+- Grocery Categories
+- Add to Cart
+- Responsive Design
+- Admin Panel
+
+## Technologies Used
+- React.js
+- Node.js
+- Express.js
+- MongoDB
+- Vercel
+- Render
